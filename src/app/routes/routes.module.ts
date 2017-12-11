@@ -13,12 +13,14 @@ import { DashboardWorkplaceComponent } from './dashboard/workplace/workplace.com
 import { ProUserLoginComponent } from './pro/user/login/login.component';
 import { ProUserRegisterComponent } from './pro/user/register/register.component';
 import { ProUserRegisterResultComponent } from './pro/user/register-result/register-result.component';
+import { SysAdminModule } from 'app/routes/sys-admin/sys-admin.module';
 
 @NgModule({
     imports: [
         SharedModule,
-        RouterModule.forRoot(routes, { useHash: true }),
-        PagesModule
+        RouterModule.forRoot(routes, { useHash: true, enableTracing: false }),
+        PagesModule,
+        SysAdminModule
     ],
     declarations: [
         DashboardV1Component,

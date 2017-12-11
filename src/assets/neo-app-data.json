@@ -1,0 +1,44 @@
+{
+    "app": {
+        "name": "配置管理后台",
+        "description": "nubia ROM 配置管理"
+    },
+    "user": {
+        "name": "gaopeng",
+        "avatar": "./assets/img/zorro.svg",
+        "email": "gaopeng@nubia.com"
+    },
+    "menu": [{
+        "text": "配置",
+        "group": true,
+        "children": [{
+            "text": "系统管理",
+            "icon": "icon-speedometer",
+            "children": [{
+                "text": "系统用户管理",
+                "link": "/sys/user"
+            },{
+                "text": "菜单资源管理",
+                "link": "/sys/menu"
+            },{
+                "text": "操作资源管理",
+                "link": "/sys/action"
+            },{
+                "text": "系统角色管理",
+                "link": "/sys/role"
+            },{
+                "text": "登录信息查询",
+                "link": "/sys/query/login"
+            },{
+                "text": "操作日志查询",
+                "link": "/sys/query/action"
+            }]
+        }, {
+            "text": "快捷菜单",
+            "translate": "shortcut",
+            "icon": "icon-rocket",
+            "shortcut_root": true,
+            "children": []
+        }]
+    }]
+}

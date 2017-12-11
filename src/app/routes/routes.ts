@@ -16,8 +16,9 @@ import { ProUserLayoutComponent } from '../layout/pro/user/user.component';
 import { ProUserLoginComponent } from './pro/user/login/login.component';
 import { ProUserRegisterComponent } from './pro/user/register/register.component';
 import { ProUserRegisterResultComponent } from './pro/user/register-result/register-result.component';
+import { Routes } from '@angular/router';
 
-export const routes = [
+export const routes: Routes = [
     {
         path: '',
         component: LayoutComponent,
@@ -36,7 +37,8 @@ export const routes = [
             { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
             { path: 'logics', loadChildren: './logics/logics.module#LogicsModule' },
             { path: 'extras', loadChildren: './extras/extras.module#ExtrasModule' },
-            { path: 'pro', loadChildren: './pro/pro.module#ProModule' }
+            { path: 'pro', loadChildren: './pro/pro.module#ProModule' },
+            { path: 'sys', loadChildren: './sys-admin/sys-admin.module#SysAdmin'}
         ]
     },
     // 全屏布局
