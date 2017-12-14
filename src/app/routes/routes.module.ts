@@ -14,13 +14,19 @@ import { ProUserLoginComponent } from './pro/user/login/login.component';
 import { ProUserRegisterComponent } from './pro/user/register/register.component';
 import { ProUserRegisterResultComponent } from './pro/user/register-result/register-result.component';
 import { SysAdminModule } from 'app/routes/sys-admin/sys-admin.module';
+import { SysOpModule } from 'app/routes/sys-op/sys-op.module';
+import { SysStatModule } from 'app/routes/sys-stat/sys-stat.module';
+import { SysTrialModule } from 'app/routes/sys-trial/sys-trial.module';
 
 @NgModule({
     imports: [
         SharedModule,
         RouterModule.forRoot(routes, { useHash: true, enableTracing: false }),
         PagesModule,
-        SysAdminModule
+        SysAdminModule,
+        SysOpModule,
+        SysStatModule,
+        SysTrialModule
     ],
     declarations: [
         DashboardV1Component,

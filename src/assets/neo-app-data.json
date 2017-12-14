@@ -34,11 +34,38 @@
                 "link": "/sys/query/action"
             }]
         }, {
-            "text": "快捷菜单",
-            "translate": "shortcut",
-            "icon": "icon-rocket",
-            "shortcut_root": true,
-            "children": []
+            "text": "业务管理",
+            "icon": "icon-speedometer",
+            "children": [{
+                "text": "设备型号管理",
+                "link": "/op/devices"
+            },{
+                "text": "应用模块管理",
+                "link": "/op/app"
+            },{
+                "text": "配置文件管理",
+                "link": "/op/config"
+            },{
+                "text": "上报记录查询",
+                "link": "/op/query/report"
+            }]
+        }, {
+            "text": "数据统计",
+            "icon": "icon-speedometer",
+            "children": [{
+                "text": "文件更新统计",
+                "link": "/stat/query/update"
+            }]
+        }, {
+            "text": "测试",
+            "icon": "icon-speedometer",
+            "children": [{
+                "text": "测试文件获取",
+                "link": "/trial/get/config"
+            },{
+                "text": "应用列表获取",
+                "link": "/trial/get/app"
+            }]
         }]
     }]
 }

@@ -1,0 +1,68 @@
+<pro-header></pro-header>
+
+<nz-card [nzBordered]="false">
+    <div class="d-flex align-items-center mb-lg">
+        <h3 class="flex-1 text-lg">管理员列表</h3>
+        <div>
+            <button nz-button [nzType]="'default'" [nzSize]="'large'" class="mr-sm" (click)="createUser()">
+                    <i class="anticon anticon-plus"></i><span>新增管理员</span>
+            </button>
+
+            <nz-radio-group [(ngModel)]="q.status" [nzSize]="'large'" class="mr-md">
+                <label nz-radio-button [nzValue]="'all'">
+                    <span>全部</span>
+                </label>
+                <label nz-radio-button [nzValue]="'progress'">
+                    <span>进行中</span>
+                </label>
+                <label nz-radio-button [nzValue]="'waiting'">
+                    <span>等待中</span>
+                </label>
+            </nz-radio-group>
+            <nz-input *ngIf="false" [nzType]="'search'" [nzPlaceHolder]="'请输入'" [(ngModel)]="q.q" [nzSize]="'large'" style="width: 272px" (change)="refresh()"></nz-input>
+            <neo-debounce-input *ngIf="true" delay="1000" placeholder="请输入..." (value)="searchChanged($event)" style="width: 272px; display:inline-block"></neo-debounce-input>
+        </div>
+    </div>
+    <nz-table
+        #nzTable
+        [nzDataSource]="data"
+        [nzPageSize]="10"
+        [nzBordered]="false"
+        [nzLoading]="loading"
+        [nzIsPagination]="true"
+        [nzShowFooter]="false"
+        [nzShowTitle]="true"
+        [nzSize]="size">
+        <span nz-table-title>管理员</span>
+        <thead nz-thead *ngIf="true">
+            <tr>
+                <th nz-th><span>姓名</span></th>
+                <th nz-th><span>账号</span></th>
+                <th nz-th><span>手机</span></th>
+                <th nz-th><span>邮箱</span></th>
+                <th nz-th><span>操作</span></th>
+            </tr>
+        </thead>
+        <tbody nz-tbody>
+            <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                <td nz-td>{{data.title}}</td>
+                <td nz-td>{{data.acount}}</td>
+                <td nz-td>{{data.phone}}</td>
+                <td nz-td>{{data.email}}</td>
+                <td nz-td>
+                    <span>
+                        <a (click)="showMsg('Edit')">编辑</a>
+                        <span nz-table-divider></span>
+                        <nz-popconfirm [nzTitle]="'确认删除？'" [nzOkText]="'删除'" [nzCancelText]="'不删除'" (nzOnConfirm)="removeUser(data)">
+                            <a nz-popconfirm>删除</a>
+                        </nz-popconfirm>
+
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+        <span nz-table-footer>Here is footer</span>
+    </nz-table>
+
+
+</nz-card>
