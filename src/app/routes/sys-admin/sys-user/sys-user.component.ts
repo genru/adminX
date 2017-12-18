@@ -18,6 +18,7 @@ export class SysUserComponent implements OnInit {
     size = 10;
 
     constructor(public msg: NzMessageService, private router: Router) {}
+    options = [{label: '普通管理员', value: 0}, {label: '测试人员', value: 1 }, {label: '普通用户', value: 2}, {label: '超级管理员', value: 3}];
 
     ngOnInit() {
         this.getData();
@@ -46,6 +47,6 @@ export class SysUserComponent implements OnInit {
     }
 
     createUser() {
-        this.router.navigate(['/sys/new/', 'user']);
+        this.router.navigate(['/sys/user/new/']);
     }
 }

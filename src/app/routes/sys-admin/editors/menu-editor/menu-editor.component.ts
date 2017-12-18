@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-user-editor',
-  templateUrl: './user-editor.component.html',
+  selector: 'app-menu-editor',
+  templateUrl: './menu-editor.component.html',
   styles: []
 })
-export class UserEditorComponent implements OnInit {
+export class MenuEditorComponent implements OnInit {
+
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
-
-  options = [{label: '普通管理员'}, {label: '测试人员'}, {label: '普通用户'}, {label: '超级管理员'}];
+    constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -19,10 +18,10 @@ export class UserEditorComponent implements OnInit {
       name: [null, [Validators.required]],
       phone: [null, [Validators.required]],
       account: [null, [Validators.required]],
-      role: [null, [Validators.required]],
+      // role: [null, [Validators.required]],
+      // roles: [null, [Validators.required]],
       // agree: [false, [Validators.requiredTrue]]
     }, );
-
   }
 
   getFormControl(name: string) {

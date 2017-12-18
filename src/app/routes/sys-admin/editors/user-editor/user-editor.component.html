@@ -1,0 +1,56 @@
+<pro-header [title]="'管理员列表'">    </pro-header>
+
+<nz-card [nzBordered]="false">
+    <form nz-form [formGroup]="form" (ngSubmit)="_submitForm()">
+
+        <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSm]="4">
+                <label nz-form-item-required>姓名</label>
+            </div>
+            <div nz-form-control nz-col [nzSm]="10" nzHasFeedback [nzValidateStatus]="getFormControl('name')">
+                <nz-input [nzSize]="'large'" [nzId]="name" formControlName="name"></nz-input>
+            </div>
+        </div>
+        <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSm]="4">
+                <label nz-form-item-required for="label-focus">账号</label>
+            </div>
+            <div nz-form-control nz-col [nzSm]="10" nzHasFeedback [nzValidateStatus]="getFormControl('account')">
+                <nz-input [nzId]="'label-focus'" [nzSize]="'large'" [nzId]="account" formControlName="account"></nz-input>
+            </div>
+        </div>
+        <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSm]="4">
+                <label nz-form-item-required>手机号码</label>
+            </div>
+            <div nz-form-control nz-col [nzSm]="10" nzHasFeedback [nzValidateStatus]="getFormControl('phone')">
+                <nz-input type="tel" [nzSize]="'large'" [nzId]="phone" formControlName="phone"></nz-input>
+            </div>
+        </div>
+        <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSm]="4">
+                <label nz-form-item-required>邮箱</label>
+            </div>
+            <div nz-form-control nz-col [nzSm]="10" nzHasFeedback [nzValidateStatus]="getFormControl('email')">
+                <nz-input [nzSize]="'large'" [nzId]="email" formControlName="email"></nz-input>
+            </div>
+        </div>
+        <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSm]="4">
+                <label nz-form-item-required>角色</label>
+            </div>
+            <div nz-form-control nz-col [nzSm]="10" nzHasFeedback [nzValidateStatus]="getFormControl('roles')">
+                <nz-checkbox-group [(ngModel)]="options" formControlName="roles">
+                </nz-checkbox-group>
+            </div>
+        </div>
+
+        <div nz-form-item nz-row class="mt-lg">
+            <div nz-form-control nz-col [nzSpan]="20" [nzOffset]="4">
+                <button nz-button [nzType]="'primary'" [disabled]="form.invalid">提交</button>
+                <!--<button nz-button (click)="form.reset()">Reset</button>-->
+            </div>
+        </div>
+
+    </form>
+</nz-card>

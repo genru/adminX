@@ -10,7 +10,8 @@ import { LayoutComponent } from 'app/layout/layout.component';
 import { Observable } from 'rxjs/Observable';
 import { SharedModule } from '@shared/shared.module';
 import { NeoSharedModule } from 'app/neo-shared/neo-shared.module';
-import { UserEditorComponent } from './user-editor/user-editor.component';
+import { UserEditorComponent } from './editors/user-editor/user-editor.component';
+import { MenuEditorComponent } from './editors/menu-editor/menu-editor.component';
 
 const routes: Routes = [
   {
@@ -18,12 +19,13 @@ const routes: Routes = [
       component: LayoutComponent,
       children: [
           { path: '', redirectTo: 'user', pathMatch: 'full' },
-          { path: 'new/:user', component: UserEditorComponent },
+          { path: 'user/new', component: UserEditorComponent },
           { path: 'user', component: SysUserComponent},
           { path: 'menu', component: MenuComponent},
+          { path: 'menu/new', component: MenuEditorComponent},
           { path: 'action', component: ActionComponent},
           { path: 'role', component: RoleComponent},
-          { path: 'query/:log', component: QueryComponent}
+          { path: 'query/:log', component: QueryComponent},
         ]
   },
 ];
@@ -34,6 +36,10 @@ const routes: Routes = [
     NeoSharedModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SysUserComponent, MenuComponent, ActionComponent, RoleComponent, QueryComponent, UserEditorComponent]
+  declarations: [SysUserComponent, MenuComponent, ActionComponent, RoleComponent, QueryComponent, UserEditorComponent, MenuEditorComponent],
+  exports: [
+    RouterModule
+] ,
+
 })
 export class SysAdminModule { }

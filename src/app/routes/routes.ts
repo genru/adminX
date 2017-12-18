@@ -38,10 +38,10 @@ export const routes: Routes = [
             { path: 'logics', loadChildren: './logics/logics.module#LogicsModule' },
             { path: 'extras', loadChildren: './extras/extras.module#ExtrasModule' },
             { path: 'pro', loadChildren: './pro/pro.module#ProModule' },
-            { path: 'sys', loadChildren: './sys-admin/sys-admin.module#SysAdmin'},
-            { path: 'op', loadChildren: './sys-op/sys-op.module#SysOp'},
-            { path: 'stat', loadChildren: './sys-stat/sys-stat.module#SysStat'},
-            { path: 'trial', loadChildren: './sys-trial/sys-trial.module#SysTrial'}
+            { path: 'sys', loadChildren: './sys-admin/sys-admin.module#SysAdminModule'},
+            { path: 'op', loadChildren: './sys-op/sys-op.module#SysOpModule'},
+            { path: 'stat', loadChildren: './sys-stat/sys-stat.module#SysStatModule'},
+            { path: 'trial', loadChildren: './sys-trial/sys-trial.module#SysTrialModule'}
         ]
     },
     // 全屏布局

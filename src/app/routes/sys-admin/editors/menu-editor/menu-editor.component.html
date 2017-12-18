@@ -24,7 +24,7 @@
                 <label nz-form-item-required>手机号码</label>
             </div>
             <div nz-form-control nz-col [nzSm]="10" nzHasFeedback [nzValidateStatus]="getFormControl('phone')">
-                <nz-input [nzSize]="'large'" [nzId]="phone" formControlName="phone"></nz-input>
+                <nz-input type="tel" [nzSize]="'large'" [nzId]="phone" formControlName="phone"></nz-input>
             </div>
         </div>
         <div nz-form-item nz-row>
@@ -35,22 +35,7 @@
                 <nz-input [nzSize]="'large'" [nzId]="email" formControlName="email"></nz-input>
             </div>
         </div>
-        <div nz-form-item nz-row>
-            <div nz-form-label nz-col [nzSm]="4">
-                <label>角色</label>
-            </div>
-            <div nz-form-control nz-col [nzSm]="10" nzHasFeedback [nzValidateStatus]="getFormControl('role')">
-                <nz-select [nzMode]="'multiple'" nzAllowClear [nzPlaceHolder]="" [nzSize]="'large'" formControlName="role">
-                    <nz-option
-                        *ngFor="let option of options"
-                        [nzLabel]="option.label"
-                        [nzValue]="option">
-                        </nz-option>
-                </nz-select>
-                <div nz-form-explain>用户角色，可多选</div>
 
-            </div>
-        </div>
         <div nz-form-item nz-row class="mt-lg">
             <div nz-form-control nz-col [nzSpan]="20" [nzOffset]="4">
                 <button nz-button [nzType]="'primary'" [disabled]="form.invalid">提交</button>
